@@ -34,7 +34,8 @@ public class MainApp {
 		defSimpleBean.getMessage();
 		
 		context.registerShutdownHook();*/
-		
+		/* Override sample */
+		/*
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		
 		HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
@@ -44,6 +45,16 @@ public class MainApp {
 		HelloIndia objB = (HelloIndia) context.getBean("helloIndia");
 		objB.getMessage1();
 		objB.getMessage2();
-		objB.getMessage3();
+		objB.getMessage3();*/
+		
+		/*Annotation Samples*/
+		AnnotationSamples();
+	}
+	
+	private static void AnnotationSamples()
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext("Annotations.xml");
+		AnnotationSamples sample = (AnnotationSamples) context.getBean("textEditor");
+		sample.spellCheck();
 	}
 }
