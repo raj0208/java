@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd" >
+    <!-- default-init-method="init" 
+	default-destroy-method="destroy" > -->
+
+   <!-- <bean id="simpleBean" class="com.myspring.HelloWorld" 
+   		 init-method="init" 
+   		 destroy-method="destroy" > 
+   		 scope="prototype"
+       <property name="message" value="Hello Spring World!"  />
+   </bean>
+
+   <bean id="defSimpleBean" class="com.myspring.HelloWorld" > 
+       <property name="message" value="Hello Default Spring Bean!"  />
+   </bean>
+   
+   <bean class="com.myspring.InitHelloWorld" />
+ -->
+   <!-- <bean class="com.myspring.InitHelloWorld" /> -->
+
+   <!-- <bean id="beanWithLazyInit" class="com.myspring.HelloWorld" lazy-init="true">
+       <property name="message" value="Bean with Lazy init"  />
+   </bean>
+
+   <bean id="beanWithInitMethod" class="com.myspring.HelloWorld" init-method="initMethod">
+       <property name="message" value="Bean with init method"  />
+   </bean> -->
+
+   <bean id="helloWorld" class="com.myspring.HelloWorld">
+      <property name="message1" value="Hello World!"/>
+      <property name="message2" value="Hello Second World!"/>
+   </bean>
+
+   <bean id="helloIndia" class="com.myspring.HelloIndia" parent="helloWorld">
+      <property name="message1" value="Hello India!"/>
+      <property name="message3" value="Namaste India!"/>
+   </bean>
+
+
+
+</beans>
