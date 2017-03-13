@@ -1,10 +1,18 @@
 package com.myspring;
 
+import com.springinaction.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 //import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+
 
 public class MainApp {
+
+	
 	public static void main(String[] args) {
 		/*AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		*/
@@ -48,7 +56,9 @@ public class MainApp {
 		objB.getMessage3();*/
 		
 		/*Annotation Samples*/
-		AnnotationSamples();
+		//AnnotationSamples();
+		
+		SpringInActionAutoConfig();
 	}
 	
 	private static void AnnotationSamples()
@@ -57,4 +67,11 @@ public class MainApp {
 		AnnotationSamples sample = (AnnotationSamples) context.getBean("textEditor");
 		sample.spellCheck();
 	}
+
+	private static void SpringInActionAutoConfig() {
+		ApplicationContext context = new AnnotationConfigApplicationContext(CDPlayerConfig.class);
+		CDPlayer cd = context.getBean(CDPlayer.class);
+		cd.play();
+	}
+
 }

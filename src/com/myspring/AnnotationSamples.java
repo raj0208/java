@@ -1,9 +1,10 @@
 package com.myspring;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+/**
+ * Annotation Samples
+ * */
 public class AnnotationSamples {
-	
 	// Property autowired
 	//@Autowired
 	private SpellChecker spellChecker;
@@ -23,7 +24,7 @@ public class AnnotationSamples {
 	
 	/*public SpellChecker getSpellChecker() {
 		return this.spellChecker;
-	}*/
+	} */
 	
 	public void spellCheck() {
 		this.spellChecker.checkSpelling();
